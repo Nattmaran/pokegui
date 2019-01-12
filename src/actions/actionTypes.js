@@ -1,0 +1,3 @@
+export const POKEMON_REQUEST    = "POKEMON_REQUEST";
+export const POKEMON_FAIL       = "POKEMON_FAIL";
+export const POKEMON_SUCCCESS   = "POKEMON_SUCCCESS";
