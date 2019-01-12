@@ -2,8 +2,8 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form'
 
 let PokeForm = props => {
-    const { handleSubmit } = props;
-    return (<form onSubmit={handleSubmit}>
+    const { handleOnChange } = props;
+    return (<form onChange={handleOnChange}>
         <div className="form-group row">
             <div className="col-sm-10">
                 <Field name="pokemonname" component="input" type="text" className="form-control" id="pokemonname" placeholder="Pokemon..." />

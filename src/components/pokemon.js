@@ -1,20 +1,16 @@
 import React from 'react'
 
+const url = 'http://localhost:3001/';
+
 class Pokemon extends React.Component {
 
     render() {
         const { pokemon } = this.props;
-        if(pokemon.fetching == "success") {
             return (<div>
                 <p>English: {pokemon.pokemon.name.english}</p>
-                <p>Japanese: {pokemon.pokemon.name.japanese}</p>
-                <p>Chinese: {pokemon.pokemon.name.chinese}</p>
+                <img src={url+pokemon.sprite}></img>
             </div>);
-        } else {
-            return <p>{pokemon.fetching}</p>;
         }
-
-    }
-};
+}
 
 export default Pokemon;

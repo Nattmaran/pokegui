@@ -1,12 +1,11 @@
 import { POKEMON_SUCCCESS, POKEMON_REQUEST, POKEMON_FAIL } from '../actions/actionTypes'
 
+const url = 'http://localhost:3001/';
+
 const initialState = {
     fetching: "dormant",
-    pokemon:
-        {
-            id: {},
-            name: {}
-        }
+    pokemon: {},
+    thumbnail: {}
 };
 
 const pokemon = (state = initialState, action) => {
@@ -20,7 +19,8 @@ const pokemon = (state = initialState, action) => {
             return {
                 ...state,
                 fetching: "success",
-                pokemon: {id: action.pokemon.id, name: action.pokemon.name}
+                pokemon: action.pokemon,
+                thumbnail: (url+action.pokemon.thumbnail)
             };
 
         case POKEMON_FAIL:
