@@ -1,4 +1,12 @@
-import {POKEMON_SUCCCESS,POKEMON_REQUEST,POKEMON_FAIL,POKEMONSEARCH_FAIL,POKEMONSEARCH_REQUEST,POKEMONSEARCH_SUCCCESS} from './actionTypes'
+import {
+    POKEMON_SUCCCESS,
+    POKEMON_REQUEST,
+    POKEMON_FAIL,
+    POKEMONSEARCH_FAIL,
+    POKEMONSEARCH_REQUEST,
+    POKEMONSEARCH_SUCCCESS,
+    ADD_TO_OPPONENTS
+} from './actionTypes'
 
 import axios from 'axios'
 
@@ -37,6 +45,13 @@ function pokemonSearchFail() {
 function pokemonSearchSucess(pokemon) {
     return {
         type: POKEMONSEARCH_SUCCCESS,
+        pokemon: pokemon
+    }
+}
+
+export function addToOpponents(pokemon) {
+    return {
+        type: ADD_TO_OPPONENTS,
         pokemon: pokemon
     }
 }

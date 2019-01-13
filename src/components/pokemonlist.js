@@ -9,10 +9,10 @@ class PokemonList extends React.Component {
                 return null;
 
             return (
-                <ul className="pokemonList">
+                <ul className="list-group">
                     {pokemonSearch.pokemonList.map(p =>
                         {
-                            return (<Pokemon key={p.id} pokemon={p}/>)
+                            return (<button onClick={() => this.props.addToOpponents(p)} className="list-group-item list-group-item-action"><Pokemon key={p.id} pokemon={p}/></button>)
                         }
                     )}
                 </ul>);

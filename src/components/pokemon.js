@@ -6,9 +6,12 @@ class Pokemon extends React.Component {
 
     render() {
         const { pokemon } = this.props;
-            return (<div>
-                <p>English: {pokemon.pokemon.name.english}</p>
+        if (pokemon === undefined) {
+            return;
+        }
+        return (<div>
                 <img src={url+pokemon.sprite}></img>
+                <p className="pull-left">{pokemon.pokemon.name.english}</p>
             </div>);
         }
 }

@@ -1,5 +1,10 @@
 import { connect } from 'react-redux'
 import PokemonList from '../components/pokemonlist'
+import {addToOpponents} from "../actions/actions";
+
+const mapDispatchToProps = (dispatch,ownProps) => ({
+    addToOpponents: (pokemon) => dispatch(addToOpponents(pokemon))
+});
 
 const mapStateToProps = (state, ownProps) => ({
     pokemonSearch: state.pokemonSearch
@@ -7,7 +12,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const PokemonListContainer = connect(
     mapStateToProps,
-    null,
+    mapDispatchToProps,
 )(PokemonList);
 
 export default PokemonListContainer
